@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+    >
+
+<LinearLayout
+    android:id="@+id/buttonHomeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineHeight="30sp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:text="Dashbord Capteur" />
+    <Button
+        android:id="@+id/btnSetup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#2196F3"
+        android:layout_marginBottom="10dp"
+        android:letterSpacing="0.2"
+        android:text="Reglage capteur"
+        android:textColor="#d9e5f3"
+        android:textStyle="bold"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"/>
+    <Button
+        android:id="@+id/btnTemperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="bottom"
+        android:background="#2196F3"
+        android:letterSpacing="0.2"
+        android:text="Visuel temperature"
+        android:textColor="#d9e5f3"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnhumidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#2196F3"
+        android:layout_marginBottom="10dp"
+        android:letterSpacing="0.2"
+        android:text="Visuel humidité"
+        android:textColor="#d9e5f3"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+</RelativeLayout>

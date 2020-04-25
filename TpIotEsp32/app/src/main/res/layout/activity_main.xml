@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOnBluetooth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#2196F3"
+            android:layout_marginBottom="10dp"
+            android:letterSpacing="0.2"
+            android:text="Activer Bluetooth"
+            android:textColor="#d9e5f3"
+            android:textStyle="bold"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#2196F3"
+            android:letterSpacing="0.2"
+            android:text="Débuter scan "
+            android:textColor="#d9e5f3"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listDevice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
