@@ -46,11 +46,12 @@
         android:layout_margin="10dp"
         android:id="@+id/edt_interval"
         android:hint="inrerval en seconde " />
+
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_send_interval"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="valider reglage wifi"
-        android:id="@+id/btn_send_interval"/>
+        android:text="valider reglage interval " />
     <LinearLayout
         android:layout_marginTop="10sp"
         android:layout_width="match_parent"
@@ -69,10 +70,11 @@
         android:layout_margin="10dp"
         android:id="@+id/edt_temperature_alert"
         android:hint="Temperature" />
+
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_send_temperature"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="valider reglage wifi"
-        android:id="@+id/btn_send_temperature"/>
+        android:text="valider reglage alerte " />
 
 </LinearLayout>

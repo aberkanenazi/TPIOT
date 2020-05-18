@@ -36,6 +36,7 @@ public class TemperatureActivity extends AppCompatActivity {
     }
 
     private void startMqtt(){
+        System.out.println("oooooooooooo");
         mqttHelper = new MqttHelper(getApplicationContext(),"capteur/temperature");
         mqttHelper.mqttAndroidClient.setCallback(new MqttCallbackExtended() {
             @Override

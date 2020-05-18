@@ -51,7 +51,7 @@ void setup() {
 
   Serial.begin(9600);
   dht.begin();//LANCEMENT CAPTEUR
-  SerialBT.begin("ESP32test");
+  SerialBT.begin("ESP32TP");
   Serial.println("Program start");
   pinMode (LED_BUILTIN, OUTPUT);
 }
@@ -76,6 +76,10 @@ void loop() {
         }else{
           digitalWrite(LED_BUILTIN, LOW);
         }
+        Serial.println(F("Humidity: "));
+        Serial.print(hum);
+        Serial.println(F("%  Temperature: "));
+        Serial.print(temp);
         client.publish("capteur/temperature",String(temp).c_str());
         client.publish("capteur/humidité", String(hum).c_str());
       

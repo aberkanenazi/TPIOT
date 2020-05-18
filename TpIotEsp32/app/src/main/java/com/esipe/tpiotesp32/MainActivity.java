@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mAdapter= new ListAdapter(getApplicationContext());
-        // On cherche à récupérer l'interface bluetooth du périphérique Android
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         listDevice=findViewById(R.id.listDevice);
         // Si pas de module (d'interface) bluetooth sur le périphérique ...
@@ -82,12 +81,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Si le bluetooth n'est pas activé, on propose de l'activer
-        /*if ( ! bluetoothAdapter.isEnabled() ) {
-            // Demande à activer l'interface bluetooth
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-        }*/
         btnActivateBluetooth = findViewById( R.id.btnOnBluetooth );
 
         btnActivateBluetooth.setOnClickListener(new View.OnClickListener() {
@@ -138,11 +131,11 @@ public class MainActivity extends AppCompatActivity {
                     showToast("Disabled");
                 }
             } else if (BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)) {
+                showToast("Scan Running");
                 mDeviceList = new ArrayList<BluetoothDevice>();
 
 
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
-                showToast("Scan finished");
                 mAdapter.setData(mDeviceList);
                 listDevice.setAdapter(mAdapter);
             } else if (BluetoothDevice.ACTION_FOUND.equals(action)) {
