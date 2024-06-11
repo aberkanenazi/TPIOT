@@ -1,68 +1,72 @@
-# TP IOT 
-_(juste en dessous des badges sympatiques à placer)_
+# Projet IoT
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
+## Description
 
-Ce projet permet d'effectuer des mesures de temperature à un intervale souhaité la visualisation des resultat est possible ar le biais d'un mobile et d'un dashboard  
+Ce projet vise à utiliser un ESP32 pour collecter des données de température et d'humidité via un capteur DHT22, et les afficher sur un tableau de bord Node-RED. Le projet intègre également un téléphone Samsung S20 pour interagir avec le système et visualiser les données.
 
-## Pour commencer
+## Matériaux et Logiciels Utilisés
 
-Entrez ici les instructions pour bien débuter avec votre projet...
+### Matériaux
+- ESP32 (avec LED et capteur DHT22)
+- Samsung S20
+- Ordinateur
 
-### Pré-requis
+### Logiciels
+- Arduino IDE
+- Ubuntu 18.04 LTS
+- Android Studio
+- MQTT (Mosquitto)
+- Node-RED
 
-- Carte ESP32 
-- Capteur DHT 22 
-- un serveur MQTT avec node red 
-- un smartphone Android 
+## Structure du Projet
 
-### Installation
- - installer le serveur mqtt sur une machine 
-  Executez la commande ``apt install mosquitto mosquitto-clients``ensuite
- 
- - installer node red `` apt-get install npm 
- - 
+1. **Connexion ESP32**: L'ESP32 se connecte au routeur via Wi-Fi pour communiquer avec le serveur MQTT.
+2. **Connexion Téléphone**: Le téléphone se connecte au routeur et au serveur MQTT pour récupérer et afficher les données de température et d'humidité. Il permet également de modifier les paramètres de l'ESP32.
+3. **Tableau de Bord Node-RED**: Un tableau de bord Node-RED est utilisé pour visualiser les données collectées.
 
-Dites ce qu'il faut faire...
+## Installation
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
+### Installation MQTT sur le Serveur
+Instructions pour installer MQTT (Mosquitto) sur le serveur.
 
+### Installation Node-RED
+Instructions pour installer Node-RED et lancer l'application.
 
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+### Ajout de Librairies à Node-RED
+Ajouter la librairie suivante à Node-RED via l'onglet Palette.
 
-## Démarrage
+## Code Arduino
 
-Dites comment faire pour lancer votre projet
+### Lecture de la Température et Publication
+Ce code récupère la température à intervalles fixes (par défaut, 10 secondes). Si la connexion au serveur MQTT est établie, les données de température et d'humidité sont publiées. Une LED s'allume si la température dépasse un certain seuil.
 
-## Fabriqué avec
+### Gestion des Messages Bluetooth
+Ce code reçoit les messages Bluetooth, interprétés pour régler les paramètres de l'ESP32 (Wi-Fi, connexion au serveur MQTT, intervalle de temps, alerte).
 
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
+## Code Android
 
-_exemples :_
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-* [Atom](https://atom.io/) - Editeur de textes
+### Gestion du Bluetooth
+Ce code gère les actions Bluetooth lors du lancement de l'application, y compris la découverte des périphériques et l'activation/désactivation du Bluetooth.
 
-## Contributing
+### Envoi de Messages Bluetooth
+Gestion de l'envoi des messages Bluetooth via un socket initialisé entre l'ESP32 et le smartphone.
 
-Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](https://example.org) pour savoir comment le faire.
+## Télémétrie et Visualisation
 
-## Versions
-Listez les versions ici 
-_exemple :_
-**Dernière version stable :** 5.0
-**Dernière version :** 5.1
-Liste des versions : [Cliquer pour afficher](https://github.com/your/project-name/tags)
-_(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
+### Télémétrie du Capteur
+Données de température et d'humidité collectées sur 24h, affichées sous forme graphique sur le tableau de bord Node-RED.
 
-## Auteurs
-Listez le(s) auteur(s) du projet ici !
-* **Jhon doe** _alias_ [@outout14](https://github.com/outout14)
+### Diagramme Node-RED
+Le diagramme Node-RED présente les flux de données et les interactions entre les composants du projet.
 
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
+### Affichage sur Tableau de Bord Node-RED
+Visualisation des données sous forme de graphiques et contrôles de la LED.
 
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
+### Affichage sur Samsung S20
+Exemple d'affichage des données sur le téléphone Samsung S20.
 
-## License
+## Limitations
+Le SSL n'a pas pu être mis en place en raison de la faible capacité de stockage de l'ESP32 (erreur: out memory)
 
-Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
-
+## Licence
+Informations sur la licence du projet.
