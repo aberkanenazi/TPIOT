@@ -34,7 +34,6 @@ void callback(char* topic, byte* message, unsigned int length) {
 
 
   // If a message is received on the topic esp32/output, you check if the message is either "on" or "off". 
-  // Changes the output state according to the message
   if (String(topic) == "capteur/led") {
     Serial.print("Changing output to ");
     if(messageTemp == "ON"){
