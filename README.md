@@ -1,4 +1,4 @@
-# Projet IoT
+# Projet scolaire IoT
 
 ## Description
 
@@ -79,6 +79,3 @@ Exemple d'affichage des données sur le téléphone Samsung S20.
 
 ## Limitations
 Le SSL n'a pas pu être mis en place en raison de la faible capacité de stockage de l'ESP32 (erreur: out memory)
-
-## Licence
-Informations sur la licence du projet.
