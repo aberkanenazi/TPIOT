@@ -15,7 +15,7 @@ char* mqttUser = "";
 char* mqttPassword = "";
 String ssid = "";
 String password =  "";
-char* mqttServer = "176.158.231.174";
+char* mqttServer = "xxx.xxx.xxx.xxx";
 const int mqttPort = 9001;
 int LED_BUILTIN = 2;
 int temp_alert = 27;
@@ -31,7 +31,7 @@ void callback(char* topic, byte* message, unsigned int length) {
   }
   Serial.println();
 
-  // Feel free to add more if statements to control more GPIOs with MQTT
+
 
   // If a message is received on the topic esp32/output, you check if the message is either "on" or "off". 
   // Changes the output state according to the message
@@ -158,10 +158,10 @@ void loop() {
           }
           break; 
       }
-      readString = ""; //clears variable for new input
+      readString = ""; 
     }
     else {
-      readString += c; //makes the string readString
+      readString += c; 
     }
 
   }
