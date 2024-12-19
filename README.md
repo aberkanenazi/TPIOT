@@ -1,4 +1,4 @@
-# Projet scolaire IoT
+# Projet IoT
 
 ## Description
 
